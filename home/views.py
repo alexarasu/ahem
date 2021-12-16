@@ -9,7 +9,7 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, "haha.html")
+    return render(request, "index.html")
 
 
 def blogs(request):
