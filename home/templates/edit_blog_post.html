@@ -5,17 +5,21 @@
 {% block css %}
 {% endblock %}
 {% block body %}
-<form enctype="multipart/form-data" method="POST"> {% csrf_token %}
-    <div class="container mt-4">
-        <p><label for="id_title">Title:</label> {{ form.title }} </p>
-        <p><label for="id_slug">Slug:</label> {{ form.slug }} </p>
-        <p><label for="id_content">Content:{{ form.content }}</p>
-        <p><label for="id_image">Image:{{ form.image }}</p>
-        <button class="btn btn-primary">Update Blog</button>
+
+<section class="gradient-custom vh-100">
+    <div class="container-fluid pt-4">
+        <form enctype="multipart/form-data" method="POST"> {% csrf_token %}
+            <div class="container mt-4 fw-bold">
+                <p><label for="id_title" class="text-white">Title:</label> {{ form.title }} </p>
+                <p><label for="id_slug" class="text-white">Slug:</label> {{ form.slug }} </p>
+                <label for="id_content" class="text-white">Content:</label>
+                <p>{{form.content}}</p>
+                <p></p>
+                <p><label for="id_image" class="text-white">Image:{{ form.image }}</p>
+                <button class="btn btn-dark" class="text-white">Update Blog</button>
+            </div>
+        </form>
     </div>
-</form>
+</section>
 
 {% endblock %}
-
-
-
