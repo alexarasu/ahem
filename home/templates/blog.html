@@ -5,12 +5,8 @@
 
 {% block css %}
 .gradient-custom {
-<!-- background: #6a11cb;
-  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)) -->
-background: rgb(171,8,240);
-background: linear-gradient(360deg, rgba(171,8,240,1) 0%, rgba(246,63,251,1) 39%, rgba(255,255,255,1) 100%);
-}
+  background: rgb(6,0,9);
+  background: linear-gradient(360deg, rgba(6,0,9,1) 15%, rgba(102,8,105,1) 53%, rgba(255,255,255,1) 100%);
 {% endblock %}
 {% block body %}
 
@@ -32,7 +28,8 @@ background: linear-gradient(360deg, rgba(171,8,240,1) 0%, rgba(246,63,251,1) 39%
           <img src="/media/blog_image.jpg" class="card-img-top" alt="..." height="250px">
           {% endif %}
           <div class="card-body">
-            <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+            <h5 class="card-title">{{post.title}}</h5>
+            <h6><small>by {{post.author}}</small></h6>
             <p class="card-text">{{post.content| truncatechars:210}}</p>
           </div>
           <a href="blog/{{post.slug}}" class="btn btn-light">Read More</a>
