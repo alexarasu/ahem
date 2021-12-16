@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth  import authenticate,  login, logout
 from .models import *
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileForm, BlogPostForm
+from .forms import ProfileForm, BlogPostForm, UpdatePostForm
 from django.views.generic import UpdateView
 from django.contrib import messages
 
@@ -56,10 +56,15 @@ def add_blogs(request):
         form=BlogPostForm()
     return render(request, "add_blogs.html", {'form':form})
 
+# class UpdatePostView(UpdateView):
+#     model = BlogPost
+#     template_name = 'edit_blog_post.html'
+#     fields = ['title', 'slug', 'content', 'image']
+
 class UpdatePostView(UpdateView):
     model = BlogPost
+    form_class = UpdatePostForm
     template_name = 'edit_blog_post.html'
-    fields = ['title', 'slug', 'content', 'image']
 
 
 def user_profile(request, myid):
