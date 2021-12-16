@@ -9,7 +9,7 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "haha.html")
 
 
 def blogs(request):
@@ -86,6 +86,7 @@ def user_profile(request, myid):
 
 def Profile(request):
     return render(request, "profile.html")
+
 
 def Register(request):
     if request.method == "POST":
