@@ -13,24 +13,26 @@ float: right;
       <h2 class="blog-post-title">{{post.title}}</h2>
       <br>
       <div class="media">
-            {% if post.author.profile.image %}
-            <img class="mr-3 rounded-circle" src="{{post.author.profile.image.url}}" width="50px" height="50px"
-                  alt="image">
-            {% endif %}
             <div class="media-body">
-                  <h5 class="mt-0"><a href="/user_profile/{{post.author.id}}/">{{post.author}}
-                              {% if user.is_authenticated %}
-                              {% if user.id == post.author.id %}
-                              <small><a href="/edit_blog_post/{{post.slug}}/" class="edit btn btn-warning">Edit Post</a></small>
-                              <small><a href="/delete_blog_post/{{post.slug}}/" class="edit btn btn-warning">Delete Post</a></small>
-                              {% endif %}
-                              {% endif %}
-                        </a></h5>
+                  <h5 class="mt-0"><label>- {{post.author}} </label>
+                        {% if user.is_authenticated %}
+                        {% if user.id == post.author.id %}
+                        <small><a href="/edit_blog_post/{{post.slug}}/" class="edit btn btn-warning">Edit
+                                    Post</a></small>
+                        <small><a href="/delete_blog_post/{{post.slug}}/" class="edit btn btn-warning">Delete
+                                    Post</a></small>
+                        {% endif %}
+                        {% endif %}
+                  </h5>
                   {{post.dateTime}}
             </div>
       </div>
       <br>
-      <img src="/media/{{post.image}}" alt="" height="250px" width="500px">
+      {% if post.image %}
+      <img src="/media/{{post.image}}" class="" alt="..." height="250px">
+      {%else%}
+      <img src="/media/blog_image.jpg" class="" alt="..." height="250px">
+      {% endif %}
       <br>
       <p>{{post.content}}.</p>
       <hr>

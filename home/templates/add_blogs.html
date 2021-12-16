@@ -5,16 +5,27 @@
 
 {% block css %}
 .gradient-custom {
-background: rgb(6,0,9);
-background: linear-gradient(360deg, rgba(6,0,9,1) 15%, rgba(102,8,105,1) 53%, rgba(255,255,255,1) 100%);
+    background: rgb(6,0,9);
+    background: linear-gradient(360deg, rgba(6,0,9,1) 0%, rgba(102,8,105,1) 19%, rgba(255,255,255,1) 100%);
+.btn-success {
+background-color: #060009 !important;
+}
+
 {% endblock %}
 {% block body %}
 <section class="gradient-custom vh-100">
     <div class="container-fluid pt-4 ">
         <form action="/add_blogs/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
-            <div class="container mt-4 align-items-center">
-                {{ form.as_p }}
-                <button class="btn btn-primary">Add Blog</button>
+            <div class="container flexbox mt-4">
+                <p><label for="id_title">Title:</label> {{ form.title }} </p>
+                <p><label for="id_slug">Slug:</label> {{ form.slug }} </p>
+                <label for="id_slug">Content:</label>
+                <textarea name="content" cols="40" rows="10" class="form-control" placeholder="Content of the Blog"
+                    required="" id="id_content"></textarea>
+                <p></p>
+                <p><label for="id_image">Image:  {{ form.image }} </p>
+                <button class="btn btn-dark">Add Blog</button>
+
             </div>
         </form>
     </div>

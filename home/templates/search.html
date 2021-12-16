@@ -11,8 +11,8 @@
     {% for blog in blogs %}
     <div class="col-lg-4 my-4">
       <div class="card shadow" style="width: 20rem; height: 33rem;">
-        {% if post.image %}
-        <img src="/media/{{post.image}}" class="card-img-top" alt="..." height="250px">
+        {% if blog.image %}
+        <img src="/media/{{blog.image}}" class="card-img-top" alt="..." height="250px">
         {%else%}
         <img src="/media/blog_image.jpg" class="card-img-top" alt="..." height="250px">
         {% endif %}
