@@ -101,7 +101,9 @@ def Register(request):
         
         if password1 != password2:
             messages.error(request, "Passwords do not match.")
-            return redirect('/register')
+            # return redirect('/register')
+            alert = True
+            return render(request, "register.html", {'alert':alert})
         
         user = User.objects.create_user(username, email, password1)
         user.first_name = first_name
