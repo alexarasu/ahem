@@ -29,7 +29,7 @@ background: linear-gradient(360deg, rgba(171,8,240,1) 0%, rgba(246,63,251,1) 39%
           {% if post.image %}
           <img src="/media/{{post.image}}" class="card-img-top" alt="..." height="250px">
           {%else%}
-          <img src="/media/haha.jpg" class="card-img-top" alt="..." height="250px">
+          <img src="/media/blog_image.jpg" class="card-img-top" alt="..." height="250px">
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
@@ -42,10 +42,6 @@ background: linear-gradient(360deg, rgba(171,8,240,1) 0%, rgba(246,63,251,1) 39%
     </div>
   </div>
 </section>
-
-
-
-
 {% endblock %}
 {% block js %}
 <script></script>

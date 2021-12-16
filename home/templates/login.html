@@ -43,4 +43,12 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
     </div>
   </div>
 </section>
+{% block js %}
+<script>
+    {% if alert %}
+    alert('PWD !!');
+    document.location = '/login';
+    {% endif %}
+</script>
+{% endblock %}
 {% endblock %}
