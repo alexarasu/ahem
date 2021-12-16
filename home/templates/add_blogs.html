@@ -7,8 +7,9 @@
 .gradient-custom {
     background: rgb(6,0,9);
     background: linear-gradient(360deg, rgba(6,0,9,1) 0%, rgba(102,8,105,1) 19%, rgba(255,255,255,1) 100%);
-.btn-success {
-background-color: #060009 !important;
+}
+.btn-dark {
+background-color: black;
 }
 
 {% endblock %}
@@ -16,7 +17,7 @@ background-color: #060009 !important;
 <section class="gradient-custom vh-100">
     <div class="container-fluid pt-4 ">
         <form action="/add_blogs/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
-            <div class="container flexbox mt-4">
+            <div class="container flexbox mt-4 fw-bold">
                 <p><label for="id_title">Title:</label> {{ form.title }} </p>
                 <p><label for="id_slug">Slug:</label> {{ form.slug }} </p>
                 <label for="id_slug">Content:</label>
