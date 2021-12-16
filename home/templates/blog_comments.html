@@ -22,6 +22,7 @@ float: right;
                               {% if user.is_authenticated %}
                               {% if user.id == post.author.id %}
                               <small><a href="/edit_blog_post/{{post.slug}}/" class="edit btn btn-warning">Edit Post</a></small>
+                              <small><a href="/delete_blog_post/{{post.slug}}/" class="edit btn btn-warning">Delete Post</a></small>
                               {% endif %}
                               {% endif %}
                         </a></h5>
