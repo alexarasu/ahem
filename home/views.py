@@ -43,7 +43,9 @@ def search(request):
         searched = request.POST['searched']
         if(len(searched) != 0):
             blogs = BlogPost.objects.filter(title__contains=searched)
-            return render(request, "search.html", {'searched': searched, 'blogs': blogs})
+            if(len(blogs)!=0):
+                return render(request, "search.html", {'searched': searched, 'blogs': blogs})
+            return redirect('/home')
         else:
             return redirect('/home')
     else:
