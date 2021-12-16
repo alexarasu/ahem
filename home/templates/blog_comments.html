@@ -11,7 +11,7 @@
             <h1 class="blog-post-title text-white">{{post.title}}</h1>
             <div class="media">
                   <div class="media-body">
-                        <h6 class="ml-4 fst-italic fw-light text-white"> - {{post.author}} {{user.last_name}}</h6>
+                        <h6 class="ml-4 fst-italic fw-light text-white"> - {{post.author}}</h6>
                         <h6 class="ml-4 fst-italic fw-light text-white"> {{post.dateTime}}</h6>
                         {% if user.is_authenticated %}
                         {% if user.id == post.author.id %}
