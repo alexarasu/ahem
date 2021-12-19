@@ -24,11 +24,11 @@
                                 <p class="text-white-50 mb-5">Register to Blog !</p>
                                 <div class="form-outline form-white mb-4">
                                     <input type="text" class="form-control form-control-lg" id="username"
-                                        name="username" placeholder="Username">
+                                        name="username" placeholder="Username" required>
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="text" class="form-control form-control-lg" id="first_name"
-                                        name="first_name" placeholder="First Name">
+                                        name="first_name" placeholder="First Name" required>
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="text" class="form-control form-control-lg" id="last_name"
@@ -36,15 +36,15 @@
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="email" class="form-control form-control-lg" id="email" name="email"
-                                        placeholder="Email">
+                                        placeholder="Email" required>
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="password" class="form-control form-control-lg" id="password1"
-                                        name="password1" placeholder="Password">
+                                        name="password1" placeholder="Password" required>
                                 </div>
                                 <div class="form-outline form-white mb-4">
                                     <input type="password" class="form-control form-control-lg" id="password2"
-                                        name="password2" placeholder="Confirm Password">
+                                        name="password2" placeholder="Confirm Password" required>
                                 </div>
                                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
                             </div>
@@ -62,7 +62,7 @@
 {% block js %}
 <script>
     {% if alert %}
-    alert('PWD !!');
+    alert('INCORRECT PASSWORD');
     document.location = '/register';
     {% endif %}
 </script>
