@@ -22,11 +22,11 @@
                 <h2 class="fw-bold mb-2 text-uppercase">UNWRITTEN</h2>
                 <p class="text-white-50 mb-5">Login to Blog !</p>
                 <div class="form-outline form-white mb-4">
-                  <input type="text" class="form-control form-control-lg" id="username" name="username">
+                  <input type="text" class="form-control form-control-lg" id="username" name="username" required>
                   <label class="form-label" for="username">Username</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                  <input type="password" class="form-control form-control-lg" id="password" name="password">
+                  <input type="password" class="form-control form-control-lg" id="password" name="password" required>
                   <label class="form-label" for="password">Password</label>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
@@ -44,7 +44,7 @@
 {% block js %}
 <script>
     {% if alert %}
-    alert('PWD !!');
+    alert('CHECK CREDENTIALS');
     document.location = '/login';
     {% endif %}
 </script>
